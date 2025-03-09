@@ -8,3 +8,7 @@ jobs:
         run: echo "Hello World!"
       - name: Print Github Actions
         run: echo "This is Github Actions Workflow Testing!!"
+      - name: Multi-line Printing
+        run: |
+             echo "First output"
+             echo "Second output"
