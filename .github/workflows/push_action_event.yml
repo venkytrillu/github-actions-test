@@ -1,0 +1,18 @@
+name: workflow_push_event
+on: workflow_dispatch
+jobs:
+  job_name_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: output data
+        run: run manually workflow
+      - name: clone the code
+        uses: actions/checkout@v3
+      - name: Installing Dependencies
+        run: npm ci
+      - name: Test Code
+        run: npm run test
+      - name: Build Code
+        run: npm run build
+      - name: Deploy Project
+        run: echo "Deploying..."
