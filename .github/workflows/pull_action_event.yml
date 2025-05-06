@@ -1,11 +1,15 @@
 name: workflow_push_event
-on: workflow_dispatch
+on: 
+  pull_request:
+    types:
+      - opened
+      - edited
 jobs:
   job_name_push:
     runs-on: ubuntu-latest
     steps:
-      - name: output data
-        run: run manually workflow
+      - name: output event data
+        run: echo "${{toJson(github.event)}}"
       - name: clone the code
         uses: actions/checkout@v3
       - name: Installing Dependencies
