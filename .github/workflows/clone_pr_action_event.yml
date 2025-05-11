@@ -14,7 +14,7 @@ on:
       - 'dev-*' # dev branch
       - 'feat/**' # feature branch
       paths:
-        - '.github/workflows/*'
+        - '.github/workflows/*' # this for path change event will trigger, paths-ignore will ignore the path files changes that will wrkflow won't trigger
 jobs:
   deploy:
     runs-on: ubuntu-latest
