@@ -12,7 +12,7 @@ on:
       branches: # targeted branhes
       - main #main branch
       - 'dev-*' # dev branch
-      - 'feat/**'
+      - 'feat/**' # feature branch
       paths-ignore:
         - '.github/workflows/*'
 jobs:
