@@ -1,0 +1,34 @@
+name: cloning code 
+on:
+  pull_request:
+    types:
+      - opened
+    branches: # targeted branhes
+      - main
+      - 'dev-*'
+      - 'feat/**'
+  workflow_dispatch:
+  push:
+      branches:
+        - main
+        - 'dev*'
+        - 'feat/**'
+      paths-ignore:
+        - '.github/workflows/*'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: output event data
+        run: echo "${{toJson(github.event)}}"
+      - name: get code
+        uses: actions/checkout@v3
+      - name: install dependences
+        run: npm ci
+      - name: test the code
+        run: npm run test
+      - name: build code
+        run: npm run build
+      - name: deploy the code
+        run: echo "Deploying...."
+
