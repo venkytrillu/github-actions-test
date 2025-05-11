@@ -4,7 +4,7 @@ on:
     types:
       - opened
     branches: # targeted branhes
-      - main
+      - main #main branch
       - 'dev-*'
       - 'feat/**'
   workflow_dispatch:
