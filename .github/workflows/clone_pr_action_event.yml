@@ -21,14 +21,13 @@ jobs:
     steps:
       - name: output event data
         run: echo "${{toJson(github.event)}}"
-      - name: get code
+      - name: clone the code
         uses: actions/checkout@v3
-      - name: install dependences
+      - name: Installing Dependencies
         run: npm ci
-      - name: test the code
+      - name: Test Code
         run: npm run test
-      - name: build code
+      - name: Build Code
         run: npm run build
-      - name: deploy the code
-        run: echo "Deploying...."
-
+      - name: Deploy Project
+        run: echo "Deploying..."
