@@ -1,6 +1,6 @@
 import MainContent from './components/MainContent';
 import logo from './assets/images/logo.png';
-// 7th commit
+// 8th commit
 function App() {
   return (
     <>
